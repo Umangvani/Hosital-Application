@@ -4,11 +4,10 @@ import SignUp from '../Sign/SignUp'
 
 function Navbar({isModalOpen, setIsModalOpen}) {
   
-
   return (
-    <div>
-      <div className="px-20 "> 
-        <nav className=" flex justify-between items-center font-normal ">
+    <div className=' '>
+      <div className="  px-20 "> 
+        <nav className=" flex justify-between items-center font-normal  ">
           <h5 className='text-2xl text-blue-900 font-bold'
           style={{color: "4200FF"}}>
             Blue Hospital 

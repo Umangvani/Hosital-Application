@@ -11,9 +11,13 @@ function App() {
 
   return (
     <>
+      
       <Navbar/>
+      <SignUp />
       <Home/>
       <Footer/>
+    
+     
       
       
     </>

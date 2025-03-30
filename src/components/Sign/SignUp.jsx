@@ -1,7 +1,19 @@
 import React from 'react'
 import image from './doctor_img-removed.png'
+import { auth, provider, signInWithPopup } from  './firebase.js';
 
 function SignUp() {
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log("Signed in as:", user.displayName, user.email);
+      // Save user to your DB or redirect from here
+    } catch (error) {
+      console.error("Google Sign-In Error:", error);
+    }
+  };
 
 
   return (
@@ -89,17 +101,27 @@ function SignUp() {
             <label htmlFor="termsAndCondition">I accept all <a href="#" className='text-blue-800'>terms and condition</a></label>
         </div>
 
-        <div className="text-center text-md text-white mb-8">
+        <div className="text-center text-md text-white mb-3">
           <button
             className='border-1 px-15 py-2 rounded-xl bg-blue-800 hover:bg-blue-900'>
             Sign Up
           </button>
         </div>
+
+
         
 
         <p className='text-center'>Already have an account <a href="#" className='text-blue-800'>? Login</a></p>
 
+        
+
         </form>
+        <button
+            onClick={handleGoogleSignIn}
+            className="w-full mt-4 flex items-center justify-center bg-white border border-gray-300 text-black rounded py-2 hover:shadow-md transition">
+          <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google logo" className="w-5 h-5 mr-2" />
+            Sign in with Google
+        </button>
 
       </div>
       
