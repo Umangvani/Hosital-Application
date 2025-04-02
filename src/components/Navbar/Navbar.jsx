@@ -26,9 +26,9 @@ function Navbar() {
 
   return (
     <div>
-      <div className="px-20">
-        <nav className="flex justify-between items-center font-normal">
-          <h5 className="text-2xl text-blue-900 font-bold">Blue Hospital</h5>
+      <div className=" px-20">
+        <nav className=" flex justify-between items-center font-normal z-10  ">
+          <h1 className="text-3xl text-blue-900 font-extrabold">Blue <span className="text-2xl font-bold">Hospital</span></h1>
 
           <div>
             <ul className="flex justify-between gap-14 items-center">
@@ -42,7 +42,7 @@ function Navbar() {
                 </select>
               </li>
               <li className="hover:text-blue-800">Doctors</li>
-              <li className="hover:text-blue-800">About</li>
+              <li className="hover:text-blue-800">About Us</li>
               <li className="hover:text-blue-800">Contact us</li>
             </ul>
           </div>

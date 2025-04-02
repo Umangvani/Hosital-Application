@@ -86,7 +86,7 @@ function Home() {
         </h1>
         <div className="flex gap-25 my-5">
           <div className="size-50 bg-blue-800 rounded-2xl flex flex-col justify-center items-center shadow-md text-white">
-            <i className="material-symbols-outlined">add_task</i>
+            {/* <i className="material-symbols-outlined">add_task</i> */}
 
             <p>Well equipped lab</p>
           </div>
@@ -98,12 +98,12 @@ function Home() {
           </div>
 
           <div className="size-50 bg-blue-800 rounded-2xl flex flex-col justify-center items-center drop-shadow-3xl text-white">
-            <i className="material-symbols-outlined">book_online</i>
+            {/* <i className="material-symbols-outlined">book_online</i> */}
             <p>Online Appointment</p>
           </div>
 
           <div className="size-50 bg-blue-800 rounded-2xl flex flex-col justify-center items-center shadow-md text-white">
-            <i className="material-symbols-outlined">perm_phone_msg</i>
+            {/* <i className="material-symbols-outlined">perm_phone_msg</i> */}
             <p>Call Center</p>
           </div>
         </div>
