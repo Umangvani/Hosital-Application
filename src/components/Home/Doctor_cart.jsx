@@ -10,7 +10,7 @@ function Doctor_cart({ name, specility, img }) {
 
       <h3 className="text-black">{name}</h3>
       <p className="text-gray-500 mb-2">{specility}</p>
-      <button className="font-semibold border-1 py-1 px-5 rounded-2xl text-blue-900 hover:text-white hover:bg-blue-800 hover:outline-2 active:outline-2 active:outline-offset-2 active:outline-blue-800 ">
+      <button className="font-semibold border-1 py-1 px-5 rounded-2xl text-blue-900 hover:text-white hover:bg-blue-800 focus:bg-blue-800 focus:text-white focus:outline-2 focus:outline-offset-2  focus:outline-blue-800 ">
         Book an Appointment
       </button>
     </div>

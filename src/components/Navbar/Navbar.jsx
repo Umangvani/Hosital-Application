@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "../Sign/SignUp";
+import Login from "../Sign/Login";
 
 function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   const handleSignUp = () => {
     setIsModalOpen(true);
@@ -12,8 +14,12 @@ function Navbar() {
     setIsModalOpen(false);
   };
 
+  const handleLogin = () => {
+    setIsLoginOpen(true);
+  };
+
   useEffect(() => {
-    if (isModalOpen) {
+    if (isModalOpen || isLoginOpen) {
       document.body.classList.add("overflow-hidden");
     } else {
       document.body.classList.remove("overflow-hidden");
@@ -22,13 +28,15 @@ function Navbar() {
     return () => {
       document.body.classList.remove("overflow-hidden"); // Cleanup on unmount
     };
-  }, [isModalOpen]);
+  }, [isModalOpen, isLoginOpen]);
 
   return (
-    <div>
-      <div className=" px-20">
+    <div className="">
+      <div className="px-25 ">
         <nav className=" flex justify-between items-center font-normal z-10  ">
-          <h1 className="text-3xl text-blue-900 font-extrabold">Blue <span className="text-2xl font-bold">Hospital</span></h1>
+          <h1 className="text-3xl text-blue-900 font-extrabold">
+            Blue <span className="text-2xl font-bold">Hospital</span>
+          </h1>
 
           <div>
             <ul className="flex justify-between gap-14 items-center">
@@ -48,17 +56,21 @@ function Navbar() {
           </div>
 
           <div className="flex gap-10 text-white">
-            <button className="border-3 rounded-xl p-2 px-7 bg-blue-800 hover:bg-blue-900">
+            <button
+              className="border-3 rounded-xl p-2 px-7 bg-blue-800 hover:bg-blue-900 "
+              onClick={handleLogin}
+            >
               Login
             </button>
             <button
               onClick={handleSignUp}
-              className="border-3 rounded-xl p-2 px-7 bg-blue-800 hover:bg-blue-900"
+              className="border-3 rounded-xl p-2 px-7 bg-blue-800 hover:bg-blue-900 "
             >
               Sign up
             </button>
           </div>
         </nav>
+        
       </div>
 
       {isModalOpen && (
@@ -66,13 +78,13 @@ function Navbar() {
           className="fixed z-30 bg-white p-5 rounded-lg shadow-lg"
           // onClick={closeModal}
         >
-          {/* <button 
-              className="absolute top-2 right-2 text-xl text-gray-600 hover:text-gray-900"
-              onClick={closeModal}>
-              &times;
-            </button> */}
-
           <SignUp isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+        </div>
+      )}
+
+      {isLoginOpen && (
+        <div className="fixed z-30 ">
+          <Login isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
         </div>
       )}
     </div>

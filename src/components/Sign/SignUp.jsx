@@ -14,6 +14,10 @@ function SignUp({ isModalOpen, setIsModalOpen }) {
     }
   };
 
+  // const handleSignUp = (e) => {
+  //     e.
+  // }
+
   if (!isModalOpen) return null;
 
   return (
@@ -121,7 +125,15 @@ function SignUp({ isModalOpen, setIsModalOpen }) {
             </div>
             {/* Sign Up Button */}
             <div className="text-center text-md text-white mb-3">
-              <button className="border px-15 py-2 rounded-xl bg-blue-800 hover:bg-blue-900 w-full">
+              <button
+                className="border px-15 py-2 rounded-xl bg-blue-800 hover:bg-blue-900 "
+                onClick={(e) => {
+                  e.preventDefault();
+                  setTimeout(() => {
+                    setIsModalOpen(false);
+                  }, 1000);
+                }}
+              >
                 Sign Up
               </button>
             </div>
