@@ -94,7 +94,7 @@ function Home() {
           </div>
 
           <div className="size-50 bg-blue-800 rounded-2xl flex flex-col justify-center items-center text-white hover:bg-white hover:text-blue-800 hover:outline-3 outline-blue-800 hover:duration-300 hover:shadow-2xl">
-            <i className="material-symbols-outlined">ambulance</i>
+            {/* <i className="material-symbols-outlined">ambulance</i> */}
 
             <p>Emergency Ambulance</p>
           </div>

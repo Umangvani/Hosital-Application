@@ -34,43 +34,43 @@ function Navbar() {
     <div className="">
       <div className="px-25 ">
         <nav className=" flex justify-between items-center font-normal z-10  ">
-          <h1 className="text-3xl text-blue-900 font-extrabold">
+          <h1 className="text-3xl text-blue-900 font-extrabold cursor-pointer">
             Blue <span className="text-2xl font-bold">Hospital</span>
           </h1>
 
           <div>
             <ul className="flex justify-between gap-14 items-center">
-              <li className="text-blue-900">Home</li>
+              <li className="text-blue-900 cursor-pointer">Home</li>
               <li>
-                <label htmlFor="list" className="hover:text-blue-800">
+                <label htmlFor="list" className="hover:text-blue-800 cursor-pointer">
                   Services
                 </label>
                 <select id="list" className="outline-none">
                   <option value=""></option>
                 </select>
               </li>
-              <li className="hover:text-blue-800">Doctors</li>
-              <li className="hover:text-blue-800">About Us</li>
-              <li className="hover:text-blue-800">Contact us</li>
+              <li className="hover:text-blue-800 cursor-pointer">Doctors</li>
+              <li className="hover:text-blue-800 cursor-pointer">About Us</li>
+              <li className="hover:text-blue-800 cursor-pointer">Contact us</li>
             </ul>
           </div>
 
           <div className="flex gap-10 text-white">
             <button
-              className="border-3 rounded-xl p-2 px-7 bg-blue-800 hover:bg-blue-900 "
+              className="border-3 rounded-xl p-2 px-7 bg-blue-800 hover:bg-blue-900 cursor-pointer"
               onClick={handleLogin}
             >
               Login
             </button>
             <button
               onClick={handleSignUp}
-              className="border-3 rounded-xl p-2 px-7 bg-blue-800 hover:bg-blue-900 "
+              className="border-3 rounded-xl p-2 px-7 bg-blue-800 hover:bg-blue-900 cursor-pointer"
             >
               Sign up
             </button>
           </div>
         </nav>
-        
+      
       </div>
 
       {isModalOpen && (
