@@ -2,11 +2,11 @@ import React from "react";
 import ToggleSwitch from "./ToggleSwitch";
 import Doctor_cart from "./Doctor_cart";
 import Testomonial from "./Testomonial";
-
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white px-5 md:px-30 mt-12">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white px-5 md:px-30 ">
       <div className="relative flex flex-wrap justify-evenly w-full gap-20 h-130  mt-5 ">
         {/* Top Section */}
         <div className=" max-w-3xl py-10 ">
@@ -21,7 +21,12 @@ function Home() {
 
           <div className="flex  gap-10 mt-10">
             <button className="bg-blue-800 text-white px-14 py-3 rounded-lg shadow-lg hover:bg-blue-900">
-              Book an appointment
+              <Link
+                to="/appointment"
+                
+              >
+                Book an appointment
+              </Link>
             </button>
             <button className="flex items-center gap-2 text-gray-700">
               <span className="p-2 rounded-full border-gray-400">

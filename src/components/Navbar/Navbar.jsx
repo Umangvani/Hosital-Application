@@ -45,7 +45,7 @@ function Navbar() {
   };
 
   return (
-    <div className="pt-7">
+    <div className="py-7">
       <div className="px-25 ">
         <nav className=" flex justify-between items-center font-normal z-10  ">
           <Link to="/">
@@ -79,16 +79,16 @@ function Navbar() {
             </label> */}
             <select
               id="services"
-              className="outline-none pl-2" // Add some padding to align the text
+              className="outline-none" // Add some padding to align the text
               onChange={handleSelectChange} // Handle change to navigate to selected option
             >
-              <option value="/">Select a service</option>
+              <option value="/">Service</option>
               <option value="/patient">Patient</option>
               <option value="/doctor">Doctor</option>
-              <option value="/ambulance">Ambulance</option>
+              <option value="/EmergencyAmbulance">Emergency Ambulance</option>
               <option value="/appointment">Appointment</option>
               <option value="/consultation">Consultation</option>
-              <option value="/emergency">Emergency</option>
+            
             </select>
           </li>
 

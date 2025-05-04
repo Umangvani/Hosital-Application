@@ -11,6 +11,10 @@ import DashboardLayout from "./components/Doctor Dashboard/DashboardLayout";
 import PatientDashboardLayout from "./components/Patient Dashboard/PatientDashboardLayout";
 import AboutPage from "./components/About page/AboutPage";
 import ContactPage from "./components/Contact Page/ContactPage";
+import TelehealthPage from "./components/Services Pages/TelehealthPage";
+import EmergencyAmbulancePage from "./components/Services Pages/EmergencyAmbulancePage";
+import AppointmentBooking from "./components/Services Pages/AppointmentBooking";
+
 
 function App() {
   const location = useLocation();
@@ -31,6 +35,9 @@ function App() {
         <Route path="/contactus" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/consultation" element={<TelehealthPage />} />
+        <Route path="/EmergencyAmbulance" element={<EmergencyAmbulancePage />} />        
+        <Route path="/appointment" element={<AppointmentBooking/>} />        
 
         {/* 💡 These are layout-based dashboards */}
         <Route path="/doctor" element={<DashboardLayout />} />
