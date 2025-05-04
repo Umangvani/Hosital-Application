@@ -3,6 +3,7 @@ import ToggleSwitch from "./ToggleSwitch";
 import Doctor_cart from "./Doctor_cart";
 import Testomonial from "./Testomonial";
 
+
 function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white px-5 md:px-30 mt-12">
@@ -95,7 +96,7 @@ function Home() {
 
           <div className="size-50 bg-blue-800 rounded-2xl flex flex-col justify-center items-center text-white hover:bg-white hover:text-blue-800 hover:outline-3 outline-blue-800 hover:duration-300 hover:shadow-2xl">
             {/* <i className="material-symbols-outlined">ambulance</i> */}
-
+            {/* <FontAwesomeIcon icon="fa-solid fa-house" /> */}
             <p>Emergency Ambulance</p>
           </div>
 

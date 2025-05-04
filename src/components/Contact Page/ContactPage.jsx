@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DoctorDashboard() {
+function ContactPage() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function DoctorDashboard() {
   )
 }
 
-export default DoctorDashboard
+export default ContactPage

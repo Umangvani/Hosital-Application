@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "../Sign/SignUp";
 import Login from "../Sign/Login";
+// import { Link } from "react-router";
+import { Link, useNavigate } from 'react-router-dom'; 
 
 function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,28 +32,74 @@ function Navbar() {
     };
   }, [isModalOpen, isLoginOpen]);
 
+
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  // Function to handle the navigation when an option is selected
+  const handleSelectChange = (event) => {
+    const value = event.target.value;
+    if (value) {
+      navigate(value);  // Navigate to the selected route
+    }
+
+  };
+
   return (
-    <div className="">
+    <div className="pt-7">
       <div className="px-25 ">
         <nav className=" flex justify-between items-center font-normal z-10  ">
-          <h1 className="text-3xl text-blue-900 font-extrabold cursor-pointer">
-            Blue <span className="text-2xl font-bold">Hospital</span>
-          </h1>
+          <Link to="/">
+            <h1 className="text-3xl text-blue-900 font-extrabold cursor-pointer">
+              Blue <span className="text-2xl font-bold">Hospital</span>
+            </h1>
+          </Link>
 
           <div>
             <ul className="flex justify-between gap-14 items-center">
-              <li className="text-blue-900 cursor-pointer">Home</li>
-              <li>
-                <label htmlFor="list" className="hover:text-blue-800 cursor-pointer">
+              <li className="text-blue-900 cursor-pointer">
+                <Link to="/"> Home</Link>
+              </li>
+              {/* <li>
+                <label
+                  htmlFor="list"
+                  className="hover:text-blue-800 cursor-pointer"
+                >
                   Services
                 </label>
                 <select id="list" className="outline-none">
-                  <option value=""></option>
+                  <option value="">patient</option>
+                  <option value="">doctor</option>
+                  <option value="">ambulance </option>
                 </select>
-              </li>
+              </li> */}
+
+<li className="flex items-center space-x-3 p-3">
+            {/* <label htmlFor="services" className="hover:text-blue-800 cursor-pointer">
+              Services
+            </label> */}
+            <select
+              id="services"
+              className="outline-none pl-2" // Add some padding to align the text
+              onChange={handleSelectChange} // Handle change to navigate to selected option
+            >
+              <option value="/">Select a service</option>
+              <option value="/patient">Patient</option>
+              <option value="/doctor">Doctor</option>
+              <option value="/ambulance">Ambulance</option>
+              <option value="/appointment">Appointment</option>
+              <option value="/consultation">Consultation</option>
+              <option value="/emergency">Emergency</option>
+            </select>
+          </li>
+
+          
               <li className="hover:text-blue-800 cursor-pointer">Doctors</li>
-              <li className="hover:text-blue-800 cursor-pointer">About Us</li>
-              <li className="hover:text-blue-800 cursor-pointer">Contact us</li>
+              <li className="hover:text-blue-800 cursor-pointer">
+                <Link to="/AboutUs">About us</Link>{" "}
+              </li>
+              <li className="hover:text-blue-800 cursor-pointer">
+                <Link to="/ContactUs">Contact us</Link>
+              </li>
             </ul>
           </div>
 
@@ -70,7 +118,6 @@ function Navbar() {
             </button>
           </div>
         </nav>
-      
       </div>
 
       {isModalOpen && (

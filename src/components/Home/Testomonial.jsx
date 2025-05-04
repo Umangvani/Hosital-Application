@@ -1,4 +1,5 @@
 import React from "react";
+import {  StarIcon } from '@heroicons/react/24/outline';
 
 function Testomonial({ name, speciality, rating, review, imgSource }) {
   return (
@@ -16,16 +17,12 @@ function Testomonial({ name, speciality, rating, review, imgSource }) {
         <h6 className="font-semibold text-md">{name} </h6>
         <p className="text-sm text-gray-500"> {speciality}</p>
 
-        <div className="">  
-          <svg
-            width="15"
-            height="20"
-            viewBox="0 0 24 24"
-            fill={"gold "}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77l-6.18 3.23L7 14.14 2 9.27l6.91-1.01L12 2z" />
-          </svg>
+        <div className="flex items-center space-x-1">  
+            <StarIcon className="h-4 w-4 text-yellow-400" />
+            <StarIcon className="h-4 w-4 text-yellow-400" />
+            <StarIcon className="h-4 w-4 text-yellow-400" />
+            <StarIcon className="h-4 w-4 text-yellow-400" />
+            <StarIcon className="h-4 w-4 text-gray-300" />
         </div>
         <p className="text-sm w-auto text-gray-500">{review}</p>
       </div>
