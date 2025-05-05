@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { ArrowRight, Check } from 'lucide-react';
-import img from './consultancy_image.png'
+import { useState } from "react";
+import { ArrowRight, Check } from "lucide-react";
+import img from "./consultancy_image.png";
 
 export default function TelehealthPage() {
   const [specialties] = useState([
     {
-      name: 'Gynaecology',
+      name: "Gynaecology",
       icon: (
         <div className="bg-blue-100 rounded-full p-4 w-20 h-20 flex items-center justify-center">
           <svg viewBox="0 0 40 40" className="w-12 h-12 text-blue-400">
@@ -16,10 +16,10 @@ export default function TelehealthPage() {
           </svg>
         </div>
       ),
-      price: '₹599',
+      price: "₹599",
     },
     {
-      name: 'Sexology',
+      name: "Sexology",
       icon: (
         <div className="bg-blue-100 rounded-full p-4 w-20 h-20 flex items-center justify-center">
           <svg viewBox="0 0 40 40" className="w-12 h-12 text-purple-400">
@@ -30,10 +30,10 @@ export default function TelehealthPage() {
           </svg>
         </div>
       ),
-      price: '₹599',
+      price: "₹599",
     },
     {
-      name: 'General physician',
+      name: "General physician",
       icon: (
         <div className="bg-blue-100 rounded-full p-4 w-20 h-20 flex items-center justify-center">
           <svg viewBox="0 0 40 40" className="w-12 h-12 text-blue-500">
@@ -44,10 +44,10 @@ export default function TelehealthPage() {
           </svg>
         </div>
       ),
-      price: '₹499',
+      price: "₹499",
     },
     {
-      name: 'Dermatology',
+      name: "Dermatology",
       icon: (
         <div className="bg-purple-800 rounded-full p-4 w-20 h-20 flex items-center justify-center">
           <svg viewBox="0 0 40 40" className="w-12 h-12 text-white">
@@ -58,10 +58,10 @@ export default function TelehealthPage() {
           </svg>
         </div>
       ),
-      price: '₹549',
+      price: "₹549",
     },
     {
-      name: 'Psychiatry',
+      name: "Psychiatry",
       icon: (
         <div className="bg-blue-100 rounded-full p-4 w-20 h-20 flex items-center justify-center">
           <svg viewBox="0 0 40 40" className="w-12 h-12 text-red-400">
@@ -72,10 +72,10 @@ export default function TelehealthPage() {
           </svg>
         </div>
       ),
-      price: '₹599',
+      price: "₹599",
     },
     {
-      name: 'Stomach and digestion',
+      name: "Stomach and digestion",
       icon: (
         <div className="bg-blue-100 rounded-full p-4 w-20 h-20 flex items-center justify-center">
           <svg viewBox="0 0 40 40" className="w-12 h-12 text-orange-400">
@@ -86,7 +86,7 @@ export default function TelehealthPage() {
           </svg>
         </div>
       ),
-      price: '₹499',
+      price: "₹499",
     },
   ]);
 
@@ -95,10 +95,16 @@ export default function TelehealthPage() {
       {/* Hero Banner */}
       <div className="flex bg-white rounded-lg overflow-hidden my-6">
         <div className="w-3/5 p-8 flex flex-col justify-center">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Skip the travel!</h1>
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Take Online Doctor Consultation</h2>
-          <p className="text-gray-700 mb-6">Private consultation + Audio call · Starts at just ₹199</p>
-          
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            Skip the travel!
+          </h1>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Take Online Doctor Consultation
+          </h2>
+          <p className="text-gray-700 mb-6">
+            Private consultation + Audio call · Starts at just ₹199
+          </p>
+
           <div className="flex items-center mb-6">
             <div className="flex -space-x-2 mr-3">
               <div className="w-8 h-8 rounded-full bg-blue-100 border-2 border-white"></div>
@@ -109,13 +115,13 @@ export default function TelehealthPage() {
               <span className="ml-2 bg-green-300 rounded-full w-2 h-2"></span>
             </div>
           </div>
-          
+
           <div>
             <button className="bg-blue-500 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-800">
               Consult Now
             </button>
           </div>
-          
+
           <div className="flex mt-8 text-sm text-gray-700 space-x-4">
             <div className="flex items-center">
               <Check size={16} className="text-blue-500 mr-1" />
@@ -131,40 +137,49 @@ export default function TelehealthPage() {
             </div>
           </div>
         </div>
-        
+
         <div className="w-3/5 bg-gray-100">
-          <img 
-            src={img} 
+          <img
+            src={img}
             alt="Doctor consultation"
             className="w-full h-full object-position  "
           />
         </div>
       </div>
-      
+
       {/* Specialties Section */}
       <div className="my-12">
         <div className="flex justify-between items-center mb-4">
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">25+ Specialities</h2>
-            <p className="text-gray-600">Consult with top doctors across specialities</p>
+            <h2 className="text-2xl font-bold text-gray-800">
+              25+ Specialities
+            </h2>
+            <p className="text-gray-600">
+              Consult with top doctors across specialities
+            </p>
           </div>
           <button className="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm">
             See all Specialities
           </button>
         </div>
-        
+
         <div className="grid grid-cols-6 gap-4 mt-8 relative">
           {specialties.map((specialty, index) => (
             <div key={index} className="flex flex-col items-center">
               {specialty.icon}
-              <h3 className="mt-4 font-medium text-center text-sm">{specialty.name}</h3>
+              <h3 className="mt-4 font-medium text-center text-sm">
+                {specialty.name}
+              </h3>
               <p className="text-gray-700 mt-1">{specialty.price}</p>
-              <a href="#" className="text-blue-500 flex items-center text-sm mt-1">
+              <a
+                href="#"
+                className="text-blue-500 flex items-center text-sm mt-1"
+              >
                 Consult now <ArrowRight size={14} className="ml-1" />
               </a>
             </div>
           ))}
-          
+
           <button className="absolute -right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md">
             <ArrowRight size={20} />
           </button>

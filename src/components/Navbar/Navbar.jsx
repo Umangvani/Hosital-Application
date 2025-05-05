@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SignUp from "../Sign/SignUp";
 import Login from "../Sign/Login";
 // import { Link } from "react-router";
-import { Link, useNavigate } from 'react-router-dom'; 
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,16 +32,14 @@ function Navbar() {
     };
   }, [isModalOpen, isLoginOpen]);
 
-
   const navigate = useNavigate(); // Initialize useNavigate
 
   // Function to handle the navigation when an option is selected
   const handleSelectChange = (event) => {
     const value = event.target.value;
     if (value) {
-      navigate(value);  // Navigate to the selected route
+      navigate(value); // Navigate to the selected route
     }
-
   };
 
   return (
@@ -73,27 +71,29 @@ function Navbar() {
                 </select>
               </li> */}
 
-<li className="flex items-center space-x-3 p-3">
-            {/* <label htmlFor="services" className="hover:text-blue-800 cursor-pointer">
+              <li className="flex items-center space-x-3 p-3">
+                {/* <label htmlFor="services" className="hover:text-blue-800 cursor-pointer">
               Services
             </label> */}
-            <select
-              id="services"
-              className="outline-none" // Add some padding to align the text
-              onChange={handleSelectChange} // Handle change to navigate to selected option
-            >
-              <option value="/">Service</option>
-              <option value="/patient">Patient</option>
-              <option value="/doctor">Doctor</option>
-              <option value="/EmergencyAmbulance">Emergency Ambulance</option>
-              <option value="/appointment">Appointment</option>
-              <option value="/consultation">Consultation</option>
-            
-            </select>
-          </li>
+                <select
+                  id="services"
+                  className="outline-none" // Add some padding to align the text
+                  onChange={handleSelectChange} // Handle change to navigate to selected option
+                >
+                  <option value="/">Service</option>
+                  <option value="/patient">Patient</option>
+                  <option value="/doctor">Doctor</option>
+                  <option value="/EmergencyAmbulance">
+                    Emergency Ambulance
+                  </option>
+                  <option value="/appointment">Appointment</option>
+                  <option value="/consultation">Consultation</option>
+                </select>
+              </li>
 
-          
-              <li className="hover:text-blue-800 cursor-pointer">Doctors</li>
+              <li className="hover:text-blue-800 cursor-pointer">
+                <Link to="/doctor">Doctor</Link>
+              </li>
               <li className="hover:text-blue-800 cursor-pointer">
                 <Link to="/AboutUs">About us</Link>{" "}
               </li>
