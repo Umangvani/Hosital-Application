@@ -387,7 +387,7 @@ const ContactPage = () => {
               <form className="flex">
                 <input
                   type="email"
-                  className="flex-1 px-4 py-2 rounded-l-md focus:outline-none"
+                  className="flex-1 px-4 py-2 rounded-l-md focus:outline-white text-white border-1 border-white"
                   placeholder="Your email address"
                 />
                 <button
