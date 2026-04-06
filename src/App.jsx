@@ -1,18 +1,17 @@
-import { useState } from "react";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
-import SignUp from "./components/Sign/SignUp";
-import Login from "./components/Sign/Login";
+import "./App.css";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
       <Footer />
-      
     </>
   );
 }
