@@ -8,14 +8,12 @@ function Navbar() {
 
   const handleSignUp = () => {
     setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
+    setIsLoginOpen(false);
   };
 
   const handleLogin = () => {
     setIsLoginOpen(true);
+    setIsModalOpen(false);
   };
 
   useEffect(() => {
@@ -24,67 +22,63 @@ function Navbar() {
     } else {
       document.body.classList.remove("overflow-hidden");
     }
-
     return () => {
-      document.body.classList.remove("overflow-hidden"); // Cleanup on unmount
+      document.body.classList.remove("overflow-hidden");
     };
   }, [isModalOpen, isLoginOpen]);
 
   return (
-    <div className="">
-      <div className="px-25 ">
-        <nav className=" flex justify-between items-center font-normal z-10  ">
-          <h1 className="text-3xl text-blue-900 font-extrabold">
-            Blue <span className="text-2xl font-bold">Hospital</span>
-          </h1>
+    <div className="px-6 md:px-25 py-4 shadow-sm sticky top-0 bg-white z-20">
+      <nav className="flex justify-between items-center font-normal">
+        <h1 className="text-3xl text-blue-900 font-extrabold">
+          Blue <span className="text-2xl font-bold">Hospital</span>
+        </h1>
 
-          <div>
-            <ul className="flex justify-between gap-14 items-center">
-              <li className="text-blue-900">Home</li>
-              <li>
-                <label htmlFor="list" className="hover:text-blue-800">
-                  Services
-                </label>
-                <select id="list" className="outline-none">
-                  <option value=""></option>
-                </select>
-              </li>
-              <li className="hover:text-blue-800">Doctors</li>
-              <li className="hover:text-blue-800">About Us</li>
-              <li className="hover:text-blue-800">Contact us</li>
-            </ul>
-          </div>
+        <ul className="hidden md:flex justify-between gap-10 items-center">
+          <li className="text-blue-900 font-medium cursor-pointer">Home</li>
+          <li className="hover:text-blue-800 cursor-pointer">Services</li>
+          <li className="hover:text-blue-800 cursor-pointer">Doctors</li>
+          <li className="hover:text-blue-800 cursor-pointer">About Us</li>
+          <li className="hover:text-blue-800 cursor-pointer">Contact Us</li>
+        </ul>
 
-          <div className="flex gap-10 text-white">
-            <button
-              className="border-3 rounded-xl p-2 px-7 bg-blue-800 hover:bg-blue-900 "
-              onClick={handleLogin}
-            >
-              Login
-            </button>
-            <button
-              onClick={handleSignUp}
-              className="border-3 rounded-xl p-2 px-7 bg-blue-800 hover:bg-blue-900 "
-            >
-              Sign up
-            </button>
-          </div>
-        </nav>
-        
-      </div>
+        <div className="flex gap-4 text-white">
+          <button
+            className="border-2 border-blue-800 rounded-xl p-2 px-5 bg-blue-800 hover:bg-blue-900 transition-colors"
+            onClick={handleLogin}
+          >
+            Login
+          </button>
+          <button
+            onClick={handleSignUp}
+            className="border-2 border-blue-800 rounded-xl p-2 px-5 text-blue-800 hover:bg-blue-800 hover:text-white transition-colors"
+          >
+            Sign up
+          </button>
+        </div>
+      </nav>
 
       {isModalOpen && (
-        <div
-          className="fixed z-30 bg-white p-5 rounded-lg shadow-lg"
-          // onClick={closeModal}
-        >
-          <SignUp isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+        <div className="fixed inset-0 z-30 flex items-center justify-center">
+          <div
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            onClick={() => setIsModalOpen(false)}
+          />
+          <div className="relative z-10">
+            <SignUp isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+          </div>
         </div>
       )}
 
       {isLoginOpen && (
-        <div className="fixed z-30 ">
-          <Login isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
+        <div className="fixed inset-0 z-30 flex items-center justify-center">
+          <div
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            onClick={() => setIsLoginOpen(false)}
+          />
+          <div className="relative z-10">
+            <Login isLoginOpen={isLoginOpen} setIsLoginOpen={setIsLoginOpen} />
+          </div>
         </div>
       )}
     </div>
